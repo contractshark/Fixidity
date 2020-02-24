@@ -1,6 +1,6 @@
 {
     "name": "@hq20/fixidity",
-    "version": "0.1.0-alpha.1",
+    "version": "0.1.0-alpha.2",
     "description": "Fixed precision decimal math library for Solidity",
     "files": [
         "contracts",
