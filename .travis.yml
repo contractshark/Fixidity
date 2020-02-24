@@ -7,3 +7,4 @@ install:
   - yarn
 script:
   - yarn coverage
+  - yarn lint
