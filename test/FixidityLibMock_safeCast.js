@@ -8,16 +8,10 @@ chai.use(require('chai-bignumber')()).should();
 
 contract('FixidityLibMock - safeCast', () => {
     let fixidityLibMock;
-    let fixed1;
-    let maxNewFixed;
-    let minNewFixed;
     let maxInt256;
 
     before(async () => {
         fixidityLibMock = await FixidityLibMock.deployed();
-        fixed1 = new BigNumber(await fixidityLibMock.fixed1());
-        maxNewFixed = new BigNumber(await fixidityLibMock.maxNewFixed());
-        minNewFixed = new BigNumber(await fixidityLibMock.minNewFixed());
         maxInt256 = new BigNumber(await fixidityLibMock.maxInt256());
     });
 
@@ -52,7 +46,7 @@ contract('FixidityLibMock - safeCast', () => {
             );
             result.should.be.bignumber.equal(1);
         });
-        
+
         itShouldThrow('maxInt+1()', async () => {
             await fixidityLibMock.safeUintToInt(maxInt256.plus(1).toString(10));
         }, 'Cannot cast overflowing unsigned integer to signed integer.');

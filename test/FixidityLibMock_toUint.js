@@ -11,13 +11,11 @@ contract('FixidityLibMock - toUint', () => {
     let fixidityLibMock;
     let fixed1;
     let maxNewFixed;
-    let minNewFixed;
 
     before(async () => {
         fixidityLibMock = await FixidityLibMock.deployed();
         fixed1 = new BigNumber(await fixidityLibMock.fixed1());
         maxNewFixed = new BigNumber(await fixidityLibMock.maxNewFixed());
-        minNewFixed = new BigNumber(await fixidityLibMock.minNewFixed());
     });
 
     describe('toUint', () => {

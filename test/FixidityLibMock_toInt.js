@@ -1,7 +1,6 @@
 const FixidityLibMock = artifacts.require('./FixidityLibMock.sol');
 const BigNumber = require('bignumber.js');
 const chai = require('chai');
-const { itShouldThrow } = require('./utils');
 
 // use default BigNumber
 chai.use(require('chai-bignumber')()).should();
@@ -11,14 +10,12 @@ contract('FixidityLibMock - toInt', () => {
     let fixed1;
     let maxNewFixed;
     let minNewFixed;
-    let maxInt256;
 
     before(async () => {
         fixidityLibMock = await FixidityLibMock.deployed();
         fixed1 = new BigNumber(await fixidityLibMock.fixed1());
         maxNewFixed = new BigNumber(await fixidityLibMock.maxNewFixed());
         minNewFixed = new BigNumber(await fixidityLibMock.minNewFixed());
-        maxInt256 = new BigNumber(await fixidityLibMock.maxInt256());
     });
 
     describe('toInt', () => {
