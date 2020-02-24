@@ -8,14 +8,11 @@
         "!contracts/Migrations.sol"
     ],
     "scripts": {
-        "test:local": "truffle test --network test",
-        "test:docker": "echo TODO!",
-        "start:ganache:local": "./scripts/local_ganache.sh",
+        "test": "truffle test",
         "lint:js": "eslint *.js .",
         "lint:sol": "solium -d contracts",
-        "lint": "npm run lint:sol && npm run lint:js",
+        "lint": "yarn lint:sol && yarn lint:js",
         "security": "docker run --rm --memory=3g -v $(pwd):/tmp -w \"/tmp/\" mythril/myth --truffle",
-        "describe": "surya describe contracts/*.sol",
         "coverage": "yarn build && SOLIDITY_COVERAGE=true scripts/test.sh",
         "build": "truffle compile"
     },
@@ -50,7 +47,6 @@
         "ganache-cli": "6.8.2",
         "solc": "0.5.7",
         "solidity-coverage": "0.7.1",
-        "surya": "0.2.8",
         "truffle": "5.1.10"
     }
 }
