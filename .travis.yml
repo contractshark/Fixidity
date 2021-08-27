@@ -1,0 +1,10 @@
+dist: bionic
+language: node_js
+cache: yarn
+node_js:
+  - lts/erbium
+install:
+  - yarn
+script:
+  - yarn coverage
+  - yarn lint
